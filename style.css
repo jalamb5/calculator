@@ -1,3 +1,10 @@
+:root {
+    --numcolor: #ffffff;
+    --opercolor: #faebd7;
+    --fncolor: #ffffff;
+
+}
+
 #calcCont {
     display: flex;
     justify-content: center;
@@ -40,4 +47,12 @@
 
 .number, .operator, .fn{
     border-radius: 10rem;
+}
+
+.operator {
+    background-color: var(--opercolor);
+}
+
+.number {
+    background-color: var(--numcolor);
 }
