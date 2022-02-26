@@ -5,6 +5,13 @@
 
 }
 
+body {
+    background-color: blueviolet;
+    color: azure;
+    text-align: center;
+}
+
+
 #calcCont {
     display: flex;
     justify-content: center;
@@ -18,13 +25,19 @@
     min-width: 400px;
     min-height: 500px;
     background-color: aliceblue;
+    border-radius: .5em;
+    padding: 5px;
 }
 
 #display {
     display: flex;
     justify-content: right;
     min-height: 45px;
-    background-color: lightseagreen;
+    padding: 8px;
+    margin: 13px;
+    background-color: rgb(9, 184, 175);
+    border-radius: .5em;
+    font-size: 24px;
 }
 
 #buttons {
@@ -43,6 +56,8 @@
     min-height: 50px;
     min-width: 195px;
     margin: 5px;
+    border-radius: .5em;
+    background-color: coral;
 }
 
 .number, .operator, .fn{
@@ -55,4 +70,8 @@
 
 .number {
     background-color: var(--numcolor);
+}
+
+.fn {
+    background-color: lavender;
 }
