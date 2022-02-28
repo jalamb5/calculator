@@ -21,7 +21,7 @@ body {
     display: flex;
     flex-direction: column;
     max-width: 500px;
-    max-height: 600px;
+    max-height: fit-content;
     min-width: 400px;
     min-height: 500px;
     background-color: aliceblue;
@@ -31,12 +31,27 @@ body {
 
 #display {
     display: flex;
-    justify-content: right;
-    min-height: 45px;
-    padding: 8px;
+    /* flex-direction: column; */
+    text-align: center;
+    min-height: 80px;
+    padding-right: 8px;
     margin: 13px;
     background-color: rgb(9, 184, 175);
     border-radius: .5em;
+    justify-content: space-evenly;
+}
+
+#userNumber, #lastKey, #operation {
+    min-height: 20px;
+    font-size: 24px;
+}
+
+#userNumber {
+    color: yellow;
+    
+}
+
+button {
     font-size: 24px;
 }
 
@@ -46,6 +61,7 @@ body {
     grid-template-columns: repeat(4, 95px);
     gap: 5px;
     margin: 10px;
+    font-size: 24px;
 }
 
 #largeButtons {
