@@ -57,11 +57,11 @@ Array.from(BUTTONS).forEach(function(event) {
             if (key === 'Del') {
                 if (lastKey > 0) {
                     lastKey = lastKey.slice(0, -1);
-                    updateDisplay(userNumber, lastKey);
+                    updateDisplay(userNumber, lastKey, operator);
                 }
                 else if (userNumber > 0 && operator === '') {
                     userNumber = userNumber.slice(0, -1);
-                    updateDisplay(userNumber)
+                    updateDisplay(userNumber, lastKey, operator);
                 }
             }
         }
