@@ -32,10 +32,16 @@ Array.from(BUTTONS).forEach(function(event) {
         let key = this.textContent;
         if (this.className === 'number') {
             if (operator === '') {
+                if (key === '.' && userNumber.includes('.')) {
+                    key = '';
+                }
                 userNumber += key;
                 updateDisplay(userNumber);
             }
             else if (equalFlag === false){ // If the user hasn't clicked '=' yet, they can continue adding to the number
+                if (key === '.' && lastKey.includes('.')) {
+                    key = '';
+                }
                 lastKey += key;
                 updateDisplay(userNumber, lastKey, operator);
             }
