@@ -16,6 +16,7 @@ function operate(operator, a, b) {
     }
     updateDisplay(answer, lastKey, operator);
     userNumber = answer;
+    equalFlag = true;
 };
 
 function updateDisplay(userNumber, lastKey, operator) {
@@ -45,6 +46,10 @@ Array.from(BUTTONS).forEach(function(event) {
             }
         }
         else if (this.className === 'operator') {
+            if (operator !== '') { // evaluate any existing values before updating the operator
+                operate(operator, userNumber, lastKey);
+                operator = '';
+            }
             operator = key;           
             updateDisplay(userNumber, lastKey, operator);
         }
@@ -65,7 +70,7 @@ Array.from(BUTTONS).forEach(function(event) {
         }
         else if (this.id === 'equals') {
             operate(operator, userNumber, lastKey);
-            equalFlag = true;
+            
         }
     })})
 
