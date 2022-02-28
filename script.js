@@ -11,6 +11,10 @@ let equalFlag = false;
 function operate(operator, a, b) {
     const mathDict = {'+': add, '-': subtract, '*': multiply, '/': divide};
     let answer = mathDict[operator](Number(a), Number(b));
+    if (operator === '/' && b === '0') {
+        answer = 0
+        document.getElementById('error').textContent = "Can't divide by zero";
+    };
     if (!Number.isInteger(answer)) {
         answer = Number.parseFloat(answer).toFixed(1);
     }
@@ -77,6 +81,7 @@ Array.from(BUTTONS).forEach(function(event) {
             operator = '';
             equalFlag = false;
             updateDisplay(userNumber, lastKey, operator);
+            document.getElementById('error').textContent = "";
         }
         else if (this.id === 'equals') {
             operate(operator, userNumber, lastKey);
