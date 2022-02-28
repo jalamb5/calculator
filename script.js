@@ -55,7 +55,11 @@ Array.from(BUTTONS).forEach(function(event) {
         }
         else if (this.className === 'fn') {
             if (key === 'Del') {
-                if (userNumber > 0) {
+                if (lastKey > 0) {
+                    lastKey = lastKey.slice(0, -1);
+                    updateDisplay(userNumber, lastKey);
+                }
+                else if (userNumber > 0 && operator === '') {
                     userNumber = userNumber.slice(0, -1);
                     updateDisplay(userNumber)
                 }
@@ -70,7 +74,6 @@ Array.from(BUTTONS).forEach(function(event) {
         }
         else if (this.id === 'equals') {
             operate(operator, userNumber, lastKey);
-            
         }
     })})
 
