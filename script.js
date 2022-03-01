@@ -100,7 +100,9 @@ Array.from(BUTTONS).forEach(function(event) {
             clearDisplay();
         }
         else if (this.id === 'equals') {
-            operate(operator, userNumber, lastKey);
+            if (operator !== '' && userNumber !== '' && lastKey !== '') {
+                operate(operator, userNumber, lastKey);
+            };
         }
     })})
 
@@ -115,7 +117,9 @@ document.addEventListener("keydown", function(event) {
         setOperator(keyNum);
     }
     else if (keyNum === 'Enter') {
-        operate(operator, userNumber, lastKey);
+        if (operator !== '' && userNumber !== '' && lastKey !== '') {
+            operate(operator, userNumber, lastKey);
+        };
     }
     else if (keyNum === 'c') {
         clearDisplay();
